@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Testing Demo</title>
+  </head>
+  <body>
+    <h1>This is a Heading</h1>
+    <p>This is a paragraph.</p>
+    <button>Click me</button>
+    <script>
+      const appendNewParagraph = () => {
+        const p = document.createElement('p')
+        p.innerHTML = 'This is a new paragraph.'
+        document.body.appendChild(p)
+      }
+
+      const button = document.querySelector('button')
+      button.addEventListener('click', appendNewParagraph)
+    </script>
+  </body>
+</html>
