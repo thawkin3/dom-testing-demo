@@ -1,6 +1,5 @@
 import {
   getByText,
-  findAllByText,
   fireEvent,
 } from '@testing-library/dom'
 import '@testing-library/jest-dom/extend-expect'
@@ -25,30 +24,27 @@ describe('index.html', () => {
 
   it('renders a heading element', () => {
     expect(container.querySelector('h1')).not.toBeNull()
-    expect(getByText(container, 'This is a Heading')).toBeInTheDocument()
-  })
-
-  it('renders a paragraph element', () => {
-    expect(container.querySelector('p')).not.toBeNull()
-    expect(getByText(container, 'This is a paragraph.')).toBeInTheDocument()
+    expect(getByText(container, 'Pun Generator')).toBeInTheDocument()
   })
 
   it('renders a button element', () => {
     expect(container.querySelector('button')).not.toBeNull()
-    expect(getByText(container, 'Click me')).toBeInTheDocument()
+    expect(getByText(container, 'Click me for a terrible pun')).toBeInTheDocument()
   })
 
   it('renders a new paragraph via JavaScript when the button is clicked', async () => {
-    fireEvent.click(getByText(container, 'Click me'))
-    let generatedParagraphs = await findAllByText(container, 'This is a new paragraph.')
+    const button = getByText(container, 'Click me for a terrible pun')
+    
+    fireEvent.click(button)
+    let generatedParagraphs = container.querySelectorAll('#pun-container p')
     expect(generatedParagraphs.length).toBe(1)
 
-    fireEvent.click(getByText(container, 'Click me'))
-    generatedParagraphs = await findAllByText(container, 'This is a new paragraph.')
+    fireEvent.click(button)
+    generatedParagraphs = container.querySelectorAll('#pun-container p')
     expect(generatedParagraphs.length).toBe(2)
 
-    fireEvent.click(getByText(container, 'Click me'))
-    generatedParagraphs = await findAllByText(container, 'This is a new paragraph.')
+    fireEvent.click(button)
+    generatedParagraphs = container.querySelectorAll('#pun-container p')
     expect(generatedParagraphs.length).toBe(3)
   })
 })
