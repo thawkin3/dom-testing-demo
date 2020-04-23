@@ -4,16 +4,15 @@ This is an experimental project for testing HTML and vanilla JS with Jest and `@
 
 ## Motivation
 
-I've used Jest and `@testing-library/react` alongside React extensively in professional and personal projects, but I've never tried writing unit tests to test the UI created *without* any UI frameworks or libraries.
+I've used Jest and `@testing-library/react` alongside React extensively in professional and personal projects, but I've never tried writing unit tests to test a UI that was created *without* any UI frameworks or libraries.
 
 ## Development
 
 If you'd like to run this project locally, clone the repo and then:
 
-1. `yarn install` (or `npm install`)
-2. `yarn test` (or `npm test`)
-
-No development server has been added, so you can just drag the `src/index.html` file into your browser if you'd like to preview the functionality of the simple page.
+1. `yarn install` (or `npm install`) to install dependencies
+2. `yarn start` (or `npm start`) to preview the app locally
+3. `yarn test` (or `npm test`) to run the tests
 
 ## Docs and Resources
 
