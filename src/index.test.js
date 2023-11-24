@@ -13,9 +13,6 @@ const html = fs.readFileSync(path.resolve(__dirname, './index.html'), 'utf8')
 let dom
 let container
 
-/**
- * @jest-environment jsdom
- */
 describe('index.html', () => {
   beforeEach(() => {
     // Constructing a new JSDOM with this option is the key
