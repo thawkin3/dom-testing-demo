@@ -4,7 +4,7 @@ This is an experimental project for testing HTML and vanilla JS with Jest and `@
 
 ## Motivation
 
-I've used Jest and `@testing-library/react` alongside React extensively in professional and personal projects, but I've never tried writing unit tests to test a UI that was created *without* any UI frameworks or libraries.
+I've used Jest and `@testing-library/react` alongside React extensively in professional and personal projects, but I've never tried writing unit tests to test a UI that was created _without_ any UI frameworks or libraries.
 
 ## Development
 

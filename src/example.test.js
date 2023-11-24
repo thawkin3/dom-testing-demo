@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 // Copied and pasted from:
 // https://testing-library.com/docs/dom-testing-library/example-intro
 
@@ -11,7 +15,7 @@ import {
   waitFor,
 } from '@testing-library/dom'
 // adds special assertions like toHaveTextContent
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 
 function getExampleDOM() {
   // This is just a raw example of setting up some DOM
