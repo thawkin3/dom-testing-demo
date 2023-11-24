@@ -1,10 +1,14 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { fireEvent, getByText } from '@testing-library/dom'
-import '@testing-library/jest-dom/extend-expect'
+import '@testing-library/jest-dom'
 import { JSDOM } from 'jsdom'
 import fs from 'fs'
 import path from 'path'
 
-const html = fs.readFileSync(path.resolve(__dirname, './index.html'), 'utf8');
+const html = fs.readFileSync(path.resolve(__dirname, './index.html'), 'utf8')
 
 let dom
 let container
@@ -26,12 +30,14 @@ describe('index.html', () => {
 
   it('renders a button element', () => {
     expect(container.querySelector('button')).not.toBeNull()
-    expect(getByText(container, 'Click me for a terrible pun')).toBeInTheDocument()
+    expect(
+      getByText(container, 'Click me for a terrible pun')
+    ).toBeInTheDocument()
   })
 
   it('renders a new paragraph via JavaScript when the button is clicked', async () => {
     const button = getByText(container, 'Click me for a terrible pun')
-    
+
     fireEvent.click(button)
     let generatedParagraphs = container.querySelectorAll('#pun-container p')
     expect(generatedParagraphs.length).toBe(1)
